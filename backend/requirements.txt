@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+langchain
+langchain-ollama
+langchain-core
+langchain-groq
+python-dotenv
+pydantic
+
+# Phase 2 — RAG dependencies
+chromadb
+pypdf
+sentence-transformers
+langchain-community
+langchain-text-splitters

@@ -1,0 +1,907 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2026-03-12T11:33:00.162Z  INFO 1 --- [           main] com.mole.returns.ReturnApplication       : Starting ReturnApplication v0.0.1-SNAPSHOT using Java 18-ea with PID 1 (/app/Return-0.0.1-SNAPSHOT.jar started by root in /app)
+2026-03-12T11:33:00.166Z  INFO 1 --- [           main] com.mole.returns.ReturnApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-03-12T11:33:03.360Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-12T11:33:03.643Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 270 ms. Found 3 JPA repository interfaces.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2026-03-12T11:33:05.073Z  INFO 1 --- [           main] com.mole.returns.ReturnApplication       : Starting ReturnApplication v0.0.1-SNAPSHOT using Java 18-ea with PID 1 (/app/Return-0.0.1-SNAPSHOT.jar started by root in /app)
+2026-03-12T11:33:05.138Z  INFO 1 --- [           main] com.mole.returns.ReturnApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-03-12T11:33:05.740Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2026-03-12T11:33:05.758Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-12T11:33:05.759Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-03-12T11:33:06.152Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-12T11:33:06.154Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5788 ms
+2026-03-12T11:33:07.271Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-12T11:33:07.659Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@11f23038
+2026-03-12T11:33:07.662Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-12T11:33:07.848Z  INFO 1 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-12T11:33:08.064Z  INFO 1 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-03-12T11:33:08.259Z  INFO 1 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-12T11:33:09.259Z  INFO 1 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-12T11:33:10.765Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-12T11:33:11.263Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 418 ms. Found 3 JPA repository interfaces.
+2026-03-12T11:33:12.864Z  INFO 1 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-12T11:33:12.869Z  INFO 1 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-12T11:33:13.759Z  INFO 1 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-12T11:33:14.850Z  WARN 1 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-12T11:33:14.946Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2026-03-12T11:33:14.977Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-12T11:33:14.977Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-03-12T11:33:15.671Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-12T11:33:15.675Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 10222 ms
+2026-03-12T11:33:16.457Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2026-03-12T11:33:16.528Z  INFO 1 --- [           main] com.mole.returns.ReturnApplication       : Started ReturnApplication in 18.1 seconds (process running for 20.105)
+2026-03-12T11:33:17.943Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-12T11:33:18.633Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@11f23038
+2026-03-12T11:33:18.644Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-12T11:33:18.941Z  INFO 1 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-12T11:33:19.375Z  INFO 1 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-03-12T11:33:19.658Z  INFO 1 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-12T11:33:21.459Z  INFO 1 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-12T11:33:27.174Z  INFO 1 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-12T11:33:27.185Z  INFO 1 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-12T11:33:28.853Z  INFO 1 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-12T11:33:30.673Z  WARN 1 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-12T11:33:33.540Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path ''
+2026-03-12T11:33:33.634Z  INFO 1 --- [           main] com.mole.returns.ReturnApplication       : Started ReturnApplication in 31.682 seconds (process running for 35.367)
+2026-03-12T11:35:11.380Z  INFO 1 --- [nio-8000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-12T11:35:11.380Z  INFO 1 --- [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-12T11:35:11.428Z  INFO 1 --- [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 47 ms
+2026-03-12T11:35:11.937Z  INFO 1 --- [nio-8000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-12T11:35:11.937Z  INFO 1 --- [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-12T11:35:11.941Z  INFO 1 --- [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-03-12T11:35:15.339Z  INFO 1 --- [nio-8000-exec-3] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 2276 ms
+2026-03-13T07:23:43.631Z  INFO 1 --- [nio-8000-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 663 ms
+2026-03-13T09:44:07.258Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-13T09:44:07.272Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : No existing record found. Creating new...
+2026-03-13T09:44:07.361Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : New record inserted successfully. SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-13T09:44:07.361Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 103 ms ==========
+2026-03-13T09:45:40.402Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-13T09:45:40.680Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-13T09:45:40.808Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-13T09:45:40.808Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 406 ms ==========
+2026-03-13T09:45:43.922Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-13T09:45:43.930Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-13T09:45:43.940Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-13T09:45:43.941Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 19 ms ==========
+2026-03-13T09:46:28.480Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-13T09:46:28.491Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-13T09:46:28.511Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-13T09:46:28.511Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 31 ms ==========
+2026-03-13T09:46:35.155Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-13T09:46:35.165Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-13T09:46:35.183Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-13T09:46:35.183Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 28 ms ==========
+2026-03-13T09:49:50.499Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-13T09:49:50.511Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-13T09:49:50.532Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-13T09:49:50.533Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 34 ms ==========
+2026-03-13T09:49:54.421Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-13T09:49:54.432Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-13T09:49:54.443Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-13T09:49:54.443Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 22 ms ==========
+2026-03-13T09:53:03.035Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-13T09:53:03.048Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-13T09:53:03.066Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-13T09:53:03.066Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 31 ms ==========
+2026-03-13T09:53:07.209Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-13T09:53:07.217Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-13T09:53:07.232Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-13T09:53:07.233Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 24 ms ==========
+2026-03-13T09:55:29.499Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-13T09:55:29.506Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-13T09:55:29.516Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-13T09:55:29.516Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 17 ms ==========
+2026-03-13T11:53:23.413Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-13T11:53:23.421Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-13T11:53:23.431Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-13T11:53:23.431Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 18 ms ==========
+2026-03-13T11:53:35.163Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-13T11:53:35.169Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-13T11:53:35.176Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-13T11:53:35.177Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 14 ms ==========
+2026-03-13T11:53:40.120Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-13T11:53:40.127Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-13T11:53:40.137Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-13T11:53:40.137Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 17 ms ==========
+2026-03-13T11:53:56.058Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-13T11:53:56.066Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-13T11:53:56.075Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-13T11:53:56.075Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 17 ms ==========
+2026-03-13T11:54:11.568Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-13T11:54:11.574Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-13T11:54:11.583Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-13T11:54:11.583Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 15 ms ==========
+2026-03-13T12:00:25.914Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-13T12:00:25.921Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-13T12:00:25.928Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-13T12:00:25.929Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 15 ms ==========
+2026-03-13T12:00:30.285Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-13T12:00:30.292Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-13T12:00:30.300Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-13T12:00:30.300Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 15 ms ==========
+2026-03-13T12:00:33.837Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-13T12:00:33.843Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-13T12:00:33.851Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-13T12:00:33.851Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 14 ms ==========
+2026-03-13T12:00:38.467Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-13T12:00:38.472Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-13T12:00:38.482Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-13T12:00:38.482Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 15 ms ==========
+2026-03-13T12:00:43.805Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-13T12:00:43.811Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-13T12:00:43.818Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-13T12:00:43.819Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 14 ms ==========
+2026-03-16T06:31:37.775Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-16T06:31:37.789Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : No existing record found. Creating new...
+2026-03-16T06:31:37.889Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : New record inserted successfully. SubmissionId: 57acbd90-c024-4d11-80e3-1d7ff52cc6c5
+2026-03-16T06:31:37.889Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 114 ms ==========
+2026-03-16T10:36:24.338Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-16T10:36:24.344Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : No existing record found. Creating new...
+2026-03-16T10:36:24.348Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : New record inserted successfully. SubmissionId: 9363242e-f429-48cd-b039-e0a07e433b39
+2026-03-16T10:36:24.348Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 10 ms ==========
+2026-03-17T06:42:01.322Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T06:42:01.335Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T06:42:01.347Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T06:42:01.348Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 26 ms ==========
+2026-03-17T06:42:05.575Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T06:42:05.579Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T06:42:05.583Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T06:42:05.591Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 16 ms ==========
+2026-03-17T06:42:09.428Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T06:42:09.435Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T06:42:09.442Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T06:42:09.443Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 15 ms ==========
+2026-03-17T06:42:14.611Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T06:42:14.617Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T06:42:14.624Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T06:42:14.624Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-17T06:42:19.416Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T06:42:19.423Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T06:42:19.430Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T06:42:19.430Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 14 ms ==========
+2026-03-17T07:02:48.510Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T07:02:48.539Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T07:02:48.583Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T07:02:48.583Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 73 ms ==========
+2026-03-17T07:02:49.868Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T07:02:49.875Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T07:02:49.884Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T07:02:49.884Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 16 ms ==========
+2026-03-17T07:02:53.959Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T07:02:53.966Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T07:02:53.974Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T07:02:53.974Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 15 ms ==========
+2026-03-17T07:02:57.304Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T07:02:57.312Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T07:02:57.336Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T07:02:57.337Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 33 ms ==========
+2026-03-17T07:03:01.994Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T07:03:02.000Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T07:03:02.036Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T07:03:02.036Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 42 ms ==========
+2026-03-17T07:03:08.963Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T07:03:08.969Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T07:03:08.975Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T07:03:08.975Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-17T07:05:04.079Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T07:05:04.086Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T07:05:04.100Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T07:05:04.100Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 21 ms ==========
+2026-03-17T07:05:08.070Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T07:05:08.082Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T07:05:08.091Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T07:05:08.091Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 21 ms ==========
+2026-03-17T07:05:14.923Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T07:05:14.928Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T07:05:14.935Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T07:05:14.935Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-17T07:05:21.477Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T07:05:21.716Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T07:05:21.735Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T07:05:21.735Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 258 ms ==========
+2026-03-17T07:05:28.092Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T07:05:28.098Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T07:05:28.105Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T07:05:28.105Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-17T07:07:40.948Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T07:07:40.960Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T07:07:40.977Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T07:07:40.977Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 29 ms ==========
+2026-03-17T07:07:44.852Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T07:07:44.857Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T07:07:44.864Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T07:07:44.864Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-17T07:07:48.267Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T07:07:48.274Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T07:07:48.281Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T07:07:48.282Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 15 ms ==========
+2026-03-17T07:07:53.957Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T07:07:53.963Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T07:07:53.972Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T07:07:53.972Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 15 ms ==========
+2026-03-17T07:08:05.481Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T07:08:05.487Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T07:08:05.493Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T07:08:05.493Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-17T09:21:31.621Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T09:21:31.628Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T09:21:31.637Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T09:21:31.637Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 16 ms ==========
+2026-03-17T09:21:59.065Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T09:21:59.071Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T09:21:59.078Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T09:21:59.078Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-17T09:22:03.793Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T09:22:03.799Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T09:22:03.806Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T09:22:03.807Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 14 ms ==========
+2026-03-17T09:22:51.198Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T09:22:51.204Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T09:22:51.211Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T09:22:51.211Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-17T09:22:57.851Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T09:22:57.858Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T09:22:57.866Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T09:22:57.866Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 15 ms ==========
+2026-03-17T09:24:52.949Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T09:24:52.955Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T09:24:52.961Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T09:24:52.962Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-17T09:25:02.602Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T09:25:02.608Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T09:25:02.615Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T09:25:02.615Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-17T09:25:06.570Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T09:25:06.575Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T09:25:06.582Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T09:25:06.582Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-17T09:25:11.756Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T09:25:11.762Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T09:25:11.768Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T09:25:11.769Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-17T09:25:19.355Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T09:25:19.361Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T09:25:19.368Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T09:25:19.368Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-17T09:28:46.818Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T09:28:46.829Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T09:28:46.845Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T09:28:46.846Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 28 ms ==========
+2026-03-17T09:28:47.954Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T09:28:47.959Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T09:28:47.966Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T09:28:47.967Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-17T09:28:50.824Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T09:28:50.830Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T09:28:50.837Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T09:28:50.837Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-17T09:28:54.637Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T09:28:54.642Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T09:28:54.649Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T09:28:54.650Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-17T09:28:59.477Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T09:28:59.482Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T09:28:59.488Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T09:28:59.488Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-17T09:29:05.777Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T09:29:05.783Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T09:29:05.797Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T09:29:05.798Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 21 ms ==========
+2026-03-17T10:30:02.287Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T10:30:02.300Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T10:30:02.326Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T10:30:02.326Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 39 ms ==========
+2026-03-17T10:30:06.765Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T10:30:06.772Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T10:30:06.778Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T10:30:06.778Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-17T10:30:10.489Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T10:30:10.494Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T10:30:10.500Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T10:30:10.501Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-17T10:30:15.012Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T10:30:15.016Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T10:30:15.022Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T10:30:15.023Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-17T10:30:22.889Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T10:30:22.894Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T10:30:22.901Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T10:30:22.901Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-17T11:00:38.763Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T11:00:38.777Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T11:00:38.795Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T11:00:38.795Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 32 ms ==========
+2026-03-17T11:00:43.617Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T11:00:43.623Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T11:00:43.629Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T11:00:43.629Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-17T11:00:47.387Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T11:00:47.393Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T11:00:47.400Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T11:00:47.400Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-17T11:00:52.163Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T11:00:52.169Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T11:00:52.174Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T11:00:52.174Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-17T11:00:57.712Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T11:00:57.718Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T11:00:57.725Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T11:00:57.725Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-17T11:35:03.801Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T11:35:03.806Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T11:35:03.812Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T11:35:03.812Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-17T11:36:23.218Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T11:36:23.232Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T11:36:23.252Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T11:36:23.252Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 34 ms ==========
+2026-03-17T11:37:41.061Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T11:37:41.072Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T11:37:41.087Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T11:37:41.087Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 26 ms ==========
+2026-03-17T11:37:45.229Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T11:37:45.234Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T11:37:45.240Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T11:37:45.240Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-17T11:37:49.070Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T11:37:49.075Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T11:37:49.082Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T11:37:49.082Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-17T11:49:50.672Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T11:49:50.677Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T11:49:50.683Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T11:49:50.683Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-17T11:54:21.095Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T11:54:21.101Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T11:54:21.107Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T11:54:21.107Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-17T11:56:44.544Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T11:56:44.549Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T11:56:44.565Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T11:56:44.565Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 21 ms ==========
+2026-03-17T12:00:20.002Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T12:00:20.006Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T12:00:20.013Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T12:00:20.013Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-17T12:01:19.062Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-17T12:01:19.074Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-17T12:01:19.086Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-17T12:01:19.087Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 25 ms ==========
+2026-03-18T06:53:02.427Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T06:53:02.435Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T06:53:02.451Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T06:53:02.451Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 24 ms ==========
+2026-03-18T06:53:29.917Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T06:53:29.923Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T06:53:29.928Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T06:53:29.929Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-18T06:54:10.551Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T06:54:10.556Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T06:54:10.562Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T06:54:10.562Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-18T06:54:16.168Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T06:54:16.173Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T06:54:16.181Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T06:54:16.181Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-18T06:54:25.687Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T06:54:25.692Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T06:54:25.698Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T06:54:25.698Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-18T06:55:58.113Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T06:55:58.126Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T06:55:58.145Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T06:55:58.145Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 32 ms ==========
+2026-03-18T09:07:31.311Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T09:07:31.325Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T09:07:31.342Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T09:07:31.343Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 32 ms ==========
+2026-03-18T09:07:35.933Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T09:07:35.938Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T09:07:35.945Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T09:07:35.945Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-18T09:07:40.590Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T09:07:40.598Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T09:07:40.606Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T09:07:40.606Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 16 ms ==========
+2026-03-18T09:07:46.515Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T09:07:46.521Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T09:07:46.529Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T09:07:46.529Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 14 ms ==========
+2026-03-18T09:07:53.750Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T09:07:53.755Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T09:07:53.762Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T09:07:53.762Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-18T09:09:20.899Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T09:09:20.905Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T09:09:20.912Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T09:09:20.912Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-18T10:03:07.057Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T10:03:07.070Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T10:03:07.087Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T10:03:07.087Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 30 ms ==========
+2026-03-18T10:03:12.315Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T10:03:12.320Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T10:03:12.326Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T10:03:12.327Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-18T10:03:15.796Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T10:03:15.802Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T10:03:15.810Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T10:03:15.810Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 14 ms ==========
+2026-03-18T10:03:22.359Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T10:03:22.365Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T10:03:22.372Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T10:03:22.372Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-18T10:03:28.822Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T10:03:28.827Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T10:03:28.834Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T10:03:28.835Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-18T10:05:30.076Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T10:05:30.082Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T10:05:30.088Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T10:05:30.088Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-18T10:05:34.480Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T10:05:34.483Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T10:05:34.489Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T10:05:34.489Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 9 ms ==========
+2026-03-18T10:05:38.304Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T10:05:38.309Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T10:05:38.315Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T10:05:38.315Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-18T10:05:45.337Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T10:05:45.343Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T10:05:45.349Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T10:05:45.350Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-18T10:05:52.397Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T10:05:52.402Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T10:05:52.409Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T10:05:52.409Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-18T10:08:44.037Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T10:08:44.043Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T10:08:44.049Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T10:08:44.050Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-18T10:08:48.439Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T10:08:48.444Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T10:08:48.450Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T10:08:48.451Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-18T10:08:52.071Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T10:08:52.077Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T10:08:52.083Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T10:08:52.084Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-18T10:08:56.787Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T10:08:56.792Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T10:08:56.798Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T10:08:56.799Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-18T10:09:04.734Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T10:09:04.739Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T10:09:04.745Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T10:09:04.746Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-18T10:10:07.476Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T10:10:07.487Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T10:10:07.503Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T10:10:07.503Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 27 ms ==========
+2026-03-18T12:17:56.387Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T12:17:57.031Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T12:17:57.154Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T12:17:57.155Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 768 ms ==========
+2026-03-18T12:18:02.748Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T12:18:03.422Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T12:18:03.543Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T12:18:03.543Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 795 ms ==========
+2026-03-18T12:18:09.179Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T12:18:09.196Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T12:18:09.230Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T12:18:09.230Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 51 ms ==========
+2026-03-18T12:18:16.164Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T12:18:16.195Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T12:18:16.221Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T12:18:16.221Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 57 ms ==========
+2026-03-18T12:18:23.072Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T12:18:23.086Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T12:18:23.099Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T12:18:23.099Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 27 ms ==========
+2026-03-18T12:22:18.528Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T12:22:18.542Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T12:22:18.556Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T12:22:18.556Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 28 ms ==========
+2026-03-18T12:22:22.315Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T12:22:22.327Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T12:22:22.340Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T12:22:22.340Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 25 ms ==========
+2026-03-18T12:22:25.686Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T12:22:25.691Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T12:22:25.697Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T12:22:25.698Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-18T12:22:29.997Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T12:22:30.008Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T12:22:30.018Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T12:22:30.019Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 22 ms ==========
+2026-03-18T12:22:34.953Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-18T12:22:34.964Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-18T12:22:34.973Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-18T12:22:34.973Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 20 ms ==========
+2026-03-19T10:45:17.844Z  INFO 1 --- [io-8000-exec-10] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 987 ms
+2026-03-20T05:16:44.518Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T05:16:44.524Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T05:16:44.532Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T05:16:44.532Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 14 ms ==========
+2026-03-20T05:16:52.772Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T05:16:52.778Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T05:16:52.785Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T05:16:52.785Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-20T05:16:57.026Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T05:16:57.030Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T05:16:57.036Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T05:16:57.036Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 10 ms ==========
+2026-03-20T05:17:06.848Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T05:17:06.853Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T05:17:06.859Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T05:17:06.860Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T05:17:13.745Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T05:17:13.751Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T05:17:13.758Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T05:17:13.759Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 14 ms ==========
+2026-03-20T06:02:04.854Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T06:02:04.869Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T06:02:04.885Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T06:02:04.885Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 31 ms ==========
+2026-03-20T06:02:08.912Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T06:02:08.919Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T06:02:08.924Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T06:02:08.924Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-20T06:02:12.473Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T06:02:12.479Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T06:02:12.484Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T06:02:12.485Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-20T06:02:19.524Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T06:02:19.529Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T06:02:19.536Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T06:02:19.536Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-20T06:02:39.525Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T06:02:39.530Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T06:02:39.535Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T06:02:39.535Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 10 ms ==========
+2026-03-20T08:25:27.283Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T08:25:27.292Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T08:25:27.307Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T08:25:27.307Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 24 ms ==========
+2026-03-20T08:25:31.652Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T08:25:31.658Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T08:25:31.663Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T08:25:31.663Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T08:25:36.086Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T08:25:36.090Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T08:25:36.095Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T08:25:36.095Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 9 ms ==========
+2026-03-20T08:25:42.753Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T08:25:42.759Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T08:25:42.765Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T08:25:42.765Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-20T08:25:49.222Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T08:25:49.227Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T08:25:49.232Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T08:25:49.232Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 10 ms ==========
+2026-03-20T08:32:40.481Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T08:32:40.494Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T08:32:40.513Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T08:32:40.513Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 32 ms ==========
+2026-03-20T08:32:45.571Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T08:32:45.577Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T08:32:45.583Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T08:32:45.583Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-20T08:33:06.901Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T08:33:06.907Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T08:33:06.914Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T08:33:06.914Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-20T08:33:11.298Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T08:33:11.304Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T08:33:11.311Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T08:33:11.311Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-20T08:33:15.169Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T08:33:15.174Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T08:33:15.180Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T08:33:15.180Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T08:33:20.939Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T08:33:20.945Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T08:33:20.952Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T08:33:20.953Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 14 ms ==========
+2026-03-20T08:33:28.487Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T08:33:28.493Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T08:33:28.500Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T08:33:28.500Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-20T08:37:46.500Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T08:37:46.506Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T08:37:46.511Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T08:37:46.511Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T08:37:51.186Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T08:37:51.190Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T08:37:51.195Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T08:37:51.195Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 9 ms ==========
+2026-03-20T08:37:55.111Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T08:37:55.116Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T08:37:55.121Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T08:37:55.121Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 10 ms ==========
+2026-03-20T08:37:59.511Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T08:37:59.516Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T08:37:59.522Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T08:37:59.522Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T08:38:05.251Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T08:38:05.256Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T08:38:05.260Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T08:38:05.261Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 10 ms ==========
+2026-03-20T09:12:53.887Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T09:12:53.898Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T09:12:53.913Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T09:12:53.913Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 26 ms ==========
+2026-03-20T09:12:58.426Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T09:12:58.430Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T09:12:58.435Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T09:12:58.436Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 10 ms ==========
+2026-03-20T09:13:02.525Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T09:13:02.530Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T09:13:02.536Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T09:13:02.536Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T09:13:07.327Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T09:13:07.331Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T09:13:07.337Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T09:13:07.337Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 10 ms ==========
+2026-03-20T09:13:13.328Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T09:13:13.333Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T09:13:13.339Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T09:13:13.339Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T09:20:30.817Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T09:20:30.823Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T09:20:30.831Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T09:20:30.832Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 15 ms ==========
+2026-03-20T09:20:36.469Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T09:20:36.473Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T09:20:36.478Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T09:20:36.478Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 9 ms ==========
+2026-03-20T09:20:40.334Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T09:20:40.339Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T09:20:40.345Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T09:20:40.345Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T09:20:45.241Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T09:20:45.246Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T09:20:45.252Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T09:20:45.252Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T09:20:50.753Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T09:20:50.757Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T09:20:50.763Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T09:20:50.764Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T09:31:54.345Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T09:31:54.357Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T09:31:54.373Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T09:31:54.373Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 28 ms ==========
+2026-03-20T09:31:59.870Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T09:31:59.875Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T09:31:59.882Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T09:31:59.882Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-20T09:32:03.253Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T09:32:03.260Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T09:32:03.268Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T09:32:03.268Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 15 ms ==========
+2026-03-20T09:32:07.476Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T09:32:07.481Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T09:32:07.487Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T09:32:07.487Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T09:33:35.952Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T09:33:35.958Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T09:33:35.963Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T09:33:35.963Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T10:12:44.068Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:12:44.078Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:12:44.094Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:12:44.094Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 26 ms ==========
+2026-03-20T10:12:48.739Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:12:48.744Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:12:48.751Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:12:48.752Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-20T10:12:52.766Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:12:52.770Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:12:52.776Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:12:52.776Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 10 ms ==========
+2026-03-20T10:12:58.642Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:12:58.647Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:12:58.652Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:12:58.652Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 10 ms ==========
+2026-03-20T10:13:09.201Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:13:09.207Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:13:09.212Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:13:09.212Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T10:23:17.703Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:23:17.713Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:23:17.728Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:23:17.729Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 26 ms ==========
+2026-03-20T10:23:25.036Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:23:25.042Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:23:25.048Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:23:25.049Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-20T10:23:29.989Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:23:29.994Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:23:30.000Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:23:30.001Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-20T10:23:40.201Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:23:40.206Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:23:40.211Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:23:40.211Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 10 ms ==========
+2026-03-20T10:23:48.134Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:23:48.139Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:23:48.146Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:23:48.146Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-20T10:26:49.315Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:26:49.322Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:26:49.328Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:26:49.328Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-20T10:26:53.969Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:26:53.974Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:26:53.980Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:26:53.981Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-20T10:27:02.392Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:27:02.398Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:27:02.403Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:27:02.403Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T10:27:09.970Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:27:09.974Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:27:09.979Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:27:09.979Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 9 ms ==========
+2026-03-20T10:27:24.629Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:27:24.634Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:27:24.641Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:27:24.641Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-20T10:35:21.227Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:35:21.234Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:35:21.239Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:35:21.240Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-20T10:35:30.107Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:35:30.110Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:35:30.116Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:35:30.116Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 9 ms ==========
+2026-03-20T10:35:34.758Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:35:34.761Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:35:34.766Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:35:34.766Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 8 ms ==========
+2026-03-20T10:35:44.355Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:35:44.360Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:35:44.366Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:35:44.366Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T10:35:50.672Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:35:50.676Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:35:50.682Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:35:50.682Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 10 ms ==========
+2026-03-20T10:38:06.683Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:38:06.688Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:38:06.693Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:38:06.693Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T10:38:10.616Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:38:10.621Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:38:10.626Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:38:10.626Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 10 ms ==========
+2026-03-20T10:38:14.247Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:38:14.253Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:38:14.258Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:38:14.258Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T10:38:18.417Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:38:18.421Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:38:18.427Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:38:18.427Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 10 ms ==========
+2026-03-20T10:38:24.394Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:38:24.399Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:38:24.404Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:38:24.404Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 10 ms ==========
+2026-03-20T10:40:04.470Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:40:04.480Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:40:04.494Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:40:04.494Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 24 ms ==========
+2026-03-20T10:40:09.599Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:40:09.604Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:40:09.608Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:40:09.609Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 10 ms ==========
+2026-03-20T10:40:13.345Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:40:13.349Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:40:13.354Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:40:13.354Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 9 ms ==========
+2026-03-20T10:40:20.830Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:40:20.835Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:40:20.839Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:40:20.840Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 10 ms ==========
+2026-03-20T10:40:27.154Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:40:27.160Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:40:27.164Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:40:27.164Z  INFO 1 --- [nio-8000-exec-6] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 10 ms ==========
+2026-03-20T10:43:14.631Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:43:14.637Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:43:14.642Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:43:14.642Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T10:43:21.395Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:43:21.399Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:43:21.404Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:43:21.404Z  INFO 1 --- [nio-8000-exec-5] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 9 ms ==========
+2026-03-20T10:43:25.810Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:43:25.814Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:43:25.820Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:43:25.820Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 10 ms ==========
+2026-03-20T10:43:31.630Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:43:31.636Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:43:31.641Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:43:31.641Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T10:43:37.704Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:43:37.710Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:43:37.715Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:43:37.715Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T10:53:24.456Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:53:24.466Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:53:24.480Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:53:24.480Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 24 ms ==========
+2026-03-20T10:53:29.019Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:53:29.024Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:53:29.031Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:53:29.031Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-20T10:53:32.455Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:53:32.460Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:53:32.466Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:53:32.466Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T10:53:37.176Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:53:37.181Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:53:37.186Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:53:37.187Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T10:53:42.873Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T10:53:42.878Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T10:53:42.883Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T10:53:42.884Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T11:47:22.372Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T11:47:22.380Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T11:47:22.394Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T11:47:22.394Z  INFO 1 --- [nio-8000-exec-8] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 22 ms ==========
+2026-03-20T11:47:26.854Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T11:47:26.860Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T11:47:26.866Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T11:47:26.866Z  INFO 1 --- [nio-8000-exec-9] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 12 ms ==========
+2026-03-20T11:48:57.053Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T11:48:57.066Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T11:48:57.085Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T11:48:57.085Z  INFO 1 --- [nio-8000-exec-2] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 33 ms ==========
+2026-03-20T11:49:01.495Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T11:49:01.500Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T11:49:01.506Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T11:49:01.506Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T11:49:09.379Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T11:49:09.385Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T11:49:09.392Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T11:49:09.392Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 13 ms ==========
+2026-03-20T11:59:55.412Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T11:59:55.417Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T11:59:55.423Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T11:59:55.424Z  INFO 1 --- [nio-8000-exec-3] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 11 ms ==========
+2026-03-20T11:59:59.357Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T11:59:59.361Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T11:59:59.366Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T11:59:59.366Z  INFO 1 --- [nio-8000-exec-4] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 9 ms ==========
+2026-03-20T12:00:02.718Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T12:00:02.722Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T12:00:02.728Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T12:00:02.728Z  INFO 1 --- [nio-8000-exec-7] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 10 ms ==========
+2026-03-20T12:00:07.280Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T12:00:07.285Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T12:00:07.290Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T12:00:07.290Z  INFO 1 --- [io-8000-exec-10] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 10 ms ==========
+2026-03-20T12:00:12.793Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== START: Save/Update Return Submission ==========
+2026-03-20T12:00:12.797Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Existing record found. Updating...
+2026-03-20T12:00:12.802Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : Record updated successfully for SubmissionId: 1fef9353-232f-4e12-acdc-9ef9eebc9fdf
+2026-03-20T12:00:12.803Z  INFO 1 --- [nio-8000-exec-1] c.m.r.domain.serviceImpl.ReturnService   : ========== END | Execution Time: 10 ms ==========
