@@ -3,11 +3,11 @@
 :root {
   --bg-widget: #0d1117;
   --bg-header: linear-gradient(135deg, #0ea5e9, #06b6d4, #14b8a6);
-  --bg-messages: #010409;
+  --bg-messages: #0d1117;
   --bg-input-area: #161b22;
-  --bg-input: #0d1117;
+  --bg-input: #131a24;
   --bg-user-msg: linear-gradient(135deg, #0ea5e9, #06b6d4);
-  --bg-ai-msg: #161b22;
+  --bg-ai-msg: #1c2333;
   --text-primary: #e6edf3;
   --text-secondary: #8b949e;
   --text-muted: #484f58;
@@ -262,7 +262,8 @@ body {
   height: var(--widget-height);
   background: var(--bg-widget);
   border-radius: var(--radius);
-  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(48, 54, 61, 0.6);
+  border: 1px solid rgba(14, 165, 233, 0.25);
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(14, 165, 233, 0.08);
   z-index: 1001;
   display: flex;
   flex-direction: column;
@@ -384,14 +385,12 @@ body {
   flex-direction: column;
   gap: 12px;
   background: var(--bg-messages);
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
 }
 
 .widget-messages::-webkit-scrollbar {
-  width: 3px;
-}
-.widget-messages::-webkit-scrollbar-thumb {
-  background: rgba(139, 148, 158, 0.2);
-  border-radius: 3px;
+  display: none; /* Chrome/Safari */
 }
 
 /* Welcome */
@@ -481,6 +480,7 @@ body {
   display: flex;
   gap: 8px;
   max-width: 88%;
+  min-width: 0;
   animation: messageIn 0.3s ease;
 }
 
@@ -524,6 +524,9 @@ body {
   border-radius: 14px;
   line-height: 1.55;
   font-size: 0.82rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  min-width: 0;
 }
 
 .message.user .message-content {
@@ -560,6 +563,8 @@ body {
   padding: 10px 12px;
   margin: 8px 0;
   overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
   font-size: 0.72rem;
   color: #7ee787;
