@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import MatrixRain from './MatrixRain';
 import MessageBubble from './MessageBubble';
 import TypingIndicator from './TypingIndicator';
 import ChatInput from './ChatInput';
@@ -67,14 +68,51 @@ function App() {
 
   return (
     <>
+      {/* Matrix Rain Background */}
+      <MatrixRain />
+
+      {/* Hero Landing Section */}
+      <div className="hero-section">
+        <div className="hero-content">
+          <div className="hero-icon">☸️</div>
+          <h1 className="hero-title">
+            DevOps <span className="hero-highlight">AI Assistant</span>
+          </h1>
+          <p className="hero-subtitle">
+            Kubernetes • Docker • CI/CD • Infrastructure • Log Analysis
+          </p>
+          <div className="hero-stats">
+            <div className="hero-stat">
+              <span className="hero-stat-value">☸️</span>
+              <span className="hero-stat-label">Kubernetes</span>
+            </div>
+            <div className="hero-stat">
+              <span className="hero-stat-value">🐳</span>
+              <span className="hero-stat-label">Docker</span>
+            </div>
+            <div className="hero-stat">
+              <span className="hero-stat-value">📊</span>
+              <span className="hero-stat-label">Monitoring</span>
+            </div>
+            <div className="hero-stat">
+              <span className="hero-stat-value">🔧</span>
+              <span className="hero-stat-label">CI/CD</span>
+            </div>
+          </div>
+          <p className="hero-cta">
+            Click the button below to start chatting →
+          </p>
+        </div>
+      </div>
+
       {/* Chat Popup Window */}
       <div className={`chat-widget ${isOpen ? 'open' : ''}`}>
         {/* Widget Header */}
         <div className="widget-header">
           <div className="widget-header-left">
-            <div className="widget-avatar">☸️</div>
+            <div className="widget-avatar">🤖</div>
             <div>
-              <div className="widget-title">DevOps Assistant</div>
+              <div className="widget-title">AI Buddy</div>
               <div className="widget-status">
                 <span className={`dot ${isOnline ? 'online' : 'offline'}`}></span>
                 {isOnline ? 'Online' : 'Offline'}
@@ -97,8 +135,8 @@ function App() {
         <div className="widget-messages">
           {messages.length === 0 && !isLoading ? (
             <div className="widget-welcome">
-              <div className="welcome-emoji">☸️</div>
-              <h3>DevOps Assistant</h3>
+              <div className="welcome-emoji">🤖</div>
+              <h3>AI Buddy</h3>
               <p>Ask me about Kubernetes, Docker, CI/CD, logs & more!</p>
               <div className="quick-actions">
                 {QUICK_ACTIONS.map((action, i) => (
@@ -134,7 +172,7 @@ function App() {
         onClick={() => setIsOpen(!isOpen)}
         title={isOpen ? 'Close chat' : 'Open DevOps Assistant'}
       >
-        <span className="fab-icon-open">☸️</span>
+        <span className="fab-icon-open">🤖</span>
         <span className="fab-icon-close">✕</span>
       </button>
     </>

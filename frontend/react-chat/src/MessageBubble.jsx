@@ -52,7 +52,7 @@ function MessageBubble({ role, content, timestamp }) {
   return (
     <div className={`message ${isUser ? 'user' : 'ai'}`}>
       <div className="message-avatar">
-        {isUser ? '🧑‍💻' : '☸️'}
+        {isUser ? '🧑‍💻' : '🤖'}
       </div>
       <div>
         <div className="message-content">
