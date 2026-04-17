@@ -48,6 +48,31 @@ export async function sendMessageStream(message, sessionId, { onToken, onDone, o
     const decoder = new TextDecoder();
     let buffer = '';
 
+    // Token queue for smooth typewriter effect
+    const tokenQueue = [];
+    let isProcessing = false;
+    let streamDone = false;
+
+    const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+    const processQueue = async () => {
+      if (isProcessing) return;
+      isProcessing = true;
+
+      while (tokenQueue.length > 0) {
+        const token = tokenQueue.shift();
+        onToken(token);
+        await delay(30); // 30ms delay between tokens for typewriter feel
+      }
+
+      isProcessing = false;
+
+      // If stream finished and queue is empty, call onDone
+      if (streamDone && tokenQueue.length === 0) {
+        onDone();
+      }
+    };
+
     while (true) {
       const { done, value } = await reader.read();
       if (done) break;
@@ -56,7 +81,7 @@ export async function sendMessageStream(message, sessionId, { onToken, onDone, o
 
       // Parse SSE lines from buffer
       const lines = buffer.split('\n');
-      buffer = lines.pop(); // Keep incomplete line in buffer
+      buffer = lines.pop();
 
       for (const line of lines) {
         if (line.startsWith('data: ')) {
@@ -69,12 +94,17 @@ export async function sendMessageStream(message, sessionId, { onToken, onDone, o
             }
 
             if (data.done) {
-              onDone();
+              streamDone = true;
+              // Process remaining tokens then call onDone
+              if (tokenQueue.length === 0 && !isProcessing) {
+                onDone();
+              }
               return;
             }
 
             if (data.token) {
-              onToken(data.token);
+              tokenQueue.push(data.token);
+              processQueue(); // Start processing if not already
             }
           } catch {
             // Skip malformed JSON
@@ -83,7 +113,13 @@ export async function sendMessageStream(message, sessionId, { onToken, onDone, o
       }
     }
 
-    onDone();
+    // Ensure remaining tokens are processed
+    streamDone = true;
+    if (tokenQueue.length > 0) {
+      await processQueue();
+    } else if (!isProcessing) {
+      onDone();
+    }
   } catch (err) {
     onError(err);
   }
