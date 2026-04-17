@@ -1,9 +1,11 @@
 
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from dotenv import load_dotenv
 import uuid
+import json
 import os
 
 load_dotenv()
@@ -72,6 +74,33 @@ async def chat(request: ChatRequest):
             status_code=500,
             detail=f"Error generating response: {str(e)}"
         )
+
+
+@app.post("/chat/stream")
+async def chat_stream(request: ChatRequest):
+    """Stream AI response token-by-token using Server-Sent Events."""
+    session_id = request.session_id or str(uuid.uuid4())
+
+    async def generate():
+        try:
+            async for token in conversation_manager.chat_stream(session_id, request.message):
+                data = json.dumps({"token": token, "session_id": session_id})
+                yield f"data: {data}\n\n"
+            # Send done signal
+            yield f"data: {json.dumps({'done': True, 'session_id': session_id})}\n\n"
+        except Exception as e:
+            error = json.dumps({"error": str(e), "session_id": session_id})
+            yield f"data: {error}\n\n"
+
+    return StreamingResponse(
+        generate(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no",
+        },
+    )
 
 
 @app.post("/session/new", response_model=SessionResponse)

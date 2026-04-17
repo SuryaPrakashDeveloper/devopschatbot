@@ -219,12 +219,15 @@ body {
 .fab .fab-icon-open {
   opacity: 1;
   transform: rotate(0deg) scale(1);
-  animation: fabPulse 3s ease-in-out infinite;
+  animation: fabBounce 1.5s ease-in-out infinite;
 }
 
-@keyframes fabPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+@keyframes fabBounce {
+  0%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-6px); }
+  50% { transform: translateY(0); }
+  70% { transform: translateY(-3px); }
+  85% { transform: translateY(0); }
 }
 
 .fab .fab-icon-close {
@@ -253,7 +256,7 @@ body {
 
 .chat-widget {
   position: fixed;
-  bottom: 100px;
+  bottom: 20px;
   right: 28px;
   width: var(--widget-width);
   height: var(--widget-height);
@@ -406,12 +409,15 @@ body {
 .welcome-emoji {
   font-size: 2.8rem;
   margin-bottom: 12px;
-  animation: spin 8s linear infinite;
+  animation: bounce 1.5s ease-in-out infinite;
 }
 
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-12px); }
+  50% { transform: translateY(0); }
+  70% { transform: translateY(-6px); }
+  85% { transform: translateY(0); }
 }
 
 .widget-welcome h3 {

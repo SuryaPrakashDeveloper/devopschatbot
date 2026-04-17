@@ -141,6 +141,34 @@ class ConversationManager:
 
         return ai_response
 
+    async def chat_stream(self, session_id: str, user_message: str):
+        """Stream the AI response token-by-token (async generator)."""
+        history = self.get_history(session_id)
+
+        # --- RAG: Search DevOps knowledge base for relevant context ---
+        faq_context = ""
+        if faq_retriever.is_ready():
+            context = faq_retriever.search(user_message)
+            if context:
+                faq_context = f"--- RELEVANT DEVOPS KNOWLEDGE ---\n{context}\n--- END KNOWLEDGE ---"
+
+        # Collect full response for saving to history
+        full_response = ""
+
+        async for chunk in chain.astream({
+            "history": history,
+            "input": user_message,
+            "faq_context": faq_context,
+        }):
+            token = chunk.content
+            if token:
+                full_response += token
+                yield token
+
+        # Save to history after streaming completes
+        self.add_message(session_id, "human", user_message)
+        self.add_message(session_id, "ai", full_response)
+
 
 # Global instance
 conversation_manager = ConversationManager()

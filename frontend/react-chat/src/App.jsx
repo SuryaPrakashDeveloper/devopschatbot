@@ -3,7 +3,7 @@ import MatrixRain from './MatrixRain';
 import MessageBubble from './MessageBubble';
 import TypingIndicator from './TypingIndicator';
 import ChatInput from './ChatInput';
-import { checkApiStatus, sendMessage, clearSession } from './api';
+import { checkApiStatus, sendMessageStream, clearSession } from './api';
 
 function generateId() {
   return crypto.randomUUID?.() || Math.random().toString(36).slice(2);
@@ -45,21 +45,63 @@ function App() {
     setMessages(prev => [...prev, userMsg]);
     setIsLoading(true);
 
-    try {
-      const data = await sendMessage(text, sessionId);
-      const aiMsg = { role: 'ai', content: data.response, timestamp: new Date() };
-      setMessages(prev => [...prev, aiMsg]);
-    } catch (err) {
-      const errMsg = {
-        role: 'ai',
-        content: `⚠️ Error: ${err.message}`,
-        timestamp: new Date(),
-      };
-      setMessages(prev => [...prev, errMsg]);
-    } finally {
-      setIsLoading(false);
-    }
-  }, [isLoading, sessionId]);
+    // Add an empty AI message that we'll fill token-by-token
+    const aiMsgIndex = messages.length + 1; // +1 because we just added user msg
+    setMessages(prev => [...prev, { role: 'ai', content: '', timestamp: new Date(), streaming: true }]);
+
+    await sendMessageStream(text, sessionId, {
+      onToken: (token) => {
+        // Append each token to the AI message
+        setMessages(prev => {
+          const updated = [...prev];
+          const lastMsg = updated[updated.length - 1];
+          if (lastMsg && lastMsg.role === 'ai') {
+            updated[updated.length - 1] = {
+              ...lastMsg,
+              content: lastMsg.content + token,
+            };
+          }
+          return updated;
+        });
+      },
+      onDone: () => {
+        // Mark streaming as complete
+        setMessages(prev => {
+          const updated = [...prev];
+          const lastMsg = updated[updated.length - 1];
+          if (lastMsg && lastMsg.role === 'ai') {
+            updated[updated.length - 1] = { ...lastMsg, streaming: false };
+          }
+          return updated;
+        });
+        setIsLoading(false);
+      },
+      onError: (err) => {
+        setMessages(prev => {
+          const updated = [...prev];
+          const lastMsg = updated[updated.length - 1];
+          if (lastMsg && lastMsg.role === 'ai' && lastMsg.content === '') {
+            // Replace empty AI msg with error
+            updated[updated.length - 1] = {
+              role: 'ai',
+              content: `⚠️ Error: ${err.message}`,
+              timestamp: new Date(),
+              streaming: false,
+            };
+          } else {
+            updated.push({
+              role: 'ai',
+              content: `⚠️ Error: ${err.message}`,
+              timestamp: new Date(),
+              streaming: false,
+            });
+          }
+          return updated;
+        });
+        setIsLoading(false);
+      },
+    });
+  }, [isLoading, sessionId, messages.length]);
 
   const handleClear = useCallback(async () => {
     await clearSession(sessionId);
@@ -156,7 +198,7 @@ function App() {
               {messages.map((msg, i) => (
                 <MessageBubble key={i} {...msg} />
               ))}
-              {isLoading && <TypingIndicator />}
+              {isLoading && messages[messages.length - 1]?.content === '' && <TypingIndicator />}
               <div ref={messagesEndRef} />
             </>
           )}
