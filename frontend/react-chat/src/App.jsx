@@ -46,7 +46,6 @@ function App() {
     setIsLoading(true);
 
     // Add an empty AI message that we'll fill token-by-token
-    const aiMsgIndex = messages.length + 1; // +1 because we just added user msg
     setMessages(prev => [...prev, { role: 'ai', content: '', timestamp: new Date(), streaming: true }]);
 
     await sendMessageStream(text, sessionId, {

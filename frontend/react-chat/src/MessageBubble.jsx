@@ -8,12 +8,27 @@ function MessageBubble({ role, content, timestamp }) {
     return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   };
 
+  // Sanitize HTML to prevent XSS from LLM output
+  const sanitizeHTML = (html) => {
+    // Remove dangerous tags entirely
+    html = html.replace(/<\s*(script|iframe|object|embed|form|link|meta|base|applet)[^>]*>[\s\S]*?<\/\s*\1\s*>/gi, '');
+    html = html.replace(/<\s*(script|iframe|object|embed|form|link|meta|base|applet)[^>]*\/?>/gi, '');
+    // Remove event handler attributes (onclick, onerror, onload, etc.)
+    html = html.replace(/\s+on\w+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, '');
+    // Remove javascript: URLs (but keep our onclick on copy buttons)
+    html = html.replace(/href\s*=\s*["']?\s*javascript\s*:/gi, 'href="');
+    return html;
+  };
+
   // Enhanced markdown rendering for DevOps AI responses
   const renderContent = (text) => {
     if (isUser) return text;
     if (!text) return '';
 
     let html = text;
+
+    // Sanitize raw LLM output FIRST — before we add our own HTML (copy buttons etc.)
+    html = sanitizeHTML(html);
 
     // Convert code blocks (```lang\ncode```) to <pre> with copy button and language label
     html = html.replace(/```(\w*)\n?([\s\S]*?)```/g, (_, lang, code) => {
@@ -105,6 +120,7 @@ function MessageBubble({ role, content, timestamp }) {
     // Clean up extra <br> after block elements
     html = html.replace(/<\/(pre|ul|ol|h[1-3]|table|hr|div)><br\/>/g, '</$1>');
     html = html.replace(/<br\/><(pre|ul|ol|h[1-3]|table|hr|div)/g, '<$1');
+
 
     return <span dangerouslySetInnerHTML={{ __html: html }} />;
   };

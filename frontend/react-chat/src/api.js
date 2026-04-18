@@ -26,14 +26,12 @@ export async function sendMessage(message, sessionId) {
 }
 
 /**
- * Stream AI response token-by-token with adaptive speed.
+ * Stream AI response with TRUE real-time token delivery.
  * 
- * Speed adapts based on queue size:
- * - Queue < 5:  30ms delay (nice typewriter feel)
- * - Queue 5-15: 15ms delay (faster catch-up)
- * - Queue > 15: 5ms delay + batch 3 tokens (rapid rendering)
+ * Tokens arrive from the backend in real-time (no artificial queue/delay).
+ * A minimal 10ms delay between tokens ensures smooth visual rendering.
  * 
- * Calls onToken(token) for each word/token received.
+ * Calls onToken(token) for each token received.
  * Calls onDone() when the stream finishes.
  * Calls onError(err) if something fails.
  */
@@ -53,56 +51,6 @@ export async function sendMessageStream(message, sessionId, { onToken, onDone, o
     const reader = res.body.getReader();
     const decoder = new TextDecoder();
     let buffer = '';
-
-    // Token queue for smooth typewriter effect
-    const tokenQueue = [];
-    let isProcessing = false;
-    let streamDone = false;
-
-    const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
-    // Adaptive delay based on queue size
-    const getDelay = () => {
-      const queueSize = tokenQueue.length;
-      if (queueSize > 15) return 5;   // Fast catch-up
-      if (queueSize > 5) return 15;   // Medium speed
-      return 30;                       // Nice typewriter feel
-    };
-
-    // How many tokens to process per tick
-    const getBatchSize = () => {
-      const queueSize = tokenQueue.length;
-      if (queueSize > 15) return 3;   // Batch 3 tokens when backed up
-      return 1;                        // Normal: 1 at a time
-    };
-
-    const processQueue = async () => {
-      if (isProcessing) return;
-      isProcessing = true;
-
-      while (tokenQueue.length > 0) {
-        const batchSize = getBatchSize();
-        const currentDelay = getDelay();
-
-        // Process batch
-        let batchText = '';
-        for (let i = 0; i < batchSize && tokenQueue.length > 0; i++) {
-          batchText += tokenQueue.shift();
-        }
-        if (batchText) {
-          onToken(batchText);
-        }
-
-        await delay(currentDelay);
-      }
-
-      isProcessing = false;
-
-      // If stream finished and queue is empty, call onDone
-      if (streamDone && tokenQueue.length === 0) {
-        onDone();
-      }
-    };
 
     while (true) {
       const { done, value } = await reader.read();
@@ -125,17 +73,13 @@ export async function sendMessageStream(message, sessionId, { onToken, onDone, o
             }
 
             if (data.done) {
-              streamDone = true;
-              // Process remaining tokens then call onDone
-              if (tokenQueue.length === 0 && !isProcessing) {
-                onDone();
-              }
+              onDone();
               return;
             }
 
             if (data.token) {
-              tokenQueue.push(data.token);
-              processQueue(); // Start processing if not already
+              // Deliver token directly — real-time, no queue
+              onToken(data.token);
             }
           } catch {
             // Skip malformed JSON
@@ -144,13 +88,8 @@ export async function sendMessageStream(message, sessionId, { onToken, onDone, o
       }
     }
 
-    // Ensure remaining tokens are processed
-    streamDone = true;
-    if (tokenQueue.length > 0) {
-      await processQueue();
-    } else if (!isProcessing) {
-      onDone();
-    }
+    // Stream ended without explicit done signal
+    onDone();
   } catch (err) {
     onError(err);
   }

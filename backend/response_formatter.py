@@ -65,35 +65,42 @@ def classify_query(query: str) -> str:
     """
     Classify user query into intent type.
     Returns: 'casual', 'debugging', 'explanation', 'howto', 'log_analysis', 'command', or 'general'
+    
+    IMPORTANT: Technical keywords are ALWAYS checked first.
+    Casual is only returned if there are ZERO technical keyword matches.
+    This prevents "no pods running" from being classified as casual.
     """
     query_lower = query.lower().strip()
-
-    # --- Check casual/conversational FIRST ---
-    # Short messages (< 6 words) are more likely casual
     word_count = len(query_lower.split())
 
-    if word_count <= 5:
-        for casual_type, phrases in CASUAL_PATTERNS.items():
-            for phrase in phrases:
-                # Exact match or starts with the phrase
-                if query_lower == phrase or query_lower.startswith(phrase + " ") or query_lower.startswith(phrase + "!") or query_lower.startswith(phrase + ","):
-                    return "casual"
-
-    # --- Score technical intents ---
+    # --- STEP 1: Score technical intents FIRST (always) ---
     scores = {}
     for intent, keywords in INTENT_KEYWORDS.items():
         score = sum(1 for kw in keywords if kw in query_lower)
         if score > 0:
             scores[intent] = score
 
-    if not scores:
-        # If no technical keywords and short message → likely casual
-        if word_count <= 4:
-            return "casual"
-        return "general"
+    # If ANY technical keyword matched → return the top technical intent
+    if scores:
+        return max(scores, key=scores.get)
 
-    # Return the intent with the highest score
-    return max(scores, key=scores.get)
+    # --- STEP 2: No technical keywords found → check casual ---
+    if word_count <= 5:
+        for casual_type, phrases in CASUAL_PATTERNS.items():
+            for phrase in phrases:
+                # Single-word casual phrases: EXACT match only (not startswith)
+                if ' ' not in phrase:
+                    if query_lower == phrase or query_lower == phrase + "!" or query_lower == phrase + "?":
+                        return "casual"
+                else:
+                    # Multi-word phrases (e.g. "good morning"): exact match or starts with
+                    if query_lower == phrase or query_lower.startswith(phrase + " ") or query_lower.startswith(phrase + "!"):
+                        return "casual"
+
+    # --- STEP 3: No technical, no casual → general or casual for very short ---
+    if word_count <= 2:
+        return "casual"  # 1-2 random words with no keyword match
+    return "general"
 
 
 # ─── RESPONSE FORMAT TEMPLATES (injected into prompt) ────────────────────────
@@ -319,3 +326,63 @@ def format_stream_response(full_text: str, intent: str = "general") -> str:
     Same as format_response but called after all tokens are collected.
     """
     return format_response(full_text, intent=intent)
+
+
+# ─── STREAMING-COMPATIBLE FORMATTERS ─────────────────────────────────────────
+# These work on partial text for real-time hybrid streaming.
+
+def strip_opening_filler(text: str) -> str:
+    """
+    Strip opening filler phrases from the first chunk of streamed text.
+    Called once on the buffered first ~150 chars before streaming begins.
+    """
+    result = text
+    for pattern in FILLER_PHRASES:
+        # Only apply opening patterns (those starting with ^)
+        if pattern.startswith(r"^") or pattern.startswith(r"\n*"):
+            if pattern.startswith(r"^"):
+                result = re.sub(pattern, "", result, flags=re.IGNORECASE | re.MULTILINE)
+    return result.lstrip('\n ')
+
+
+def cleanup_stream_ending(full_text: str) -> tuple[str, str]:
+    """
+    Clean up the ending of a streamed response after all tokens are collected.
+    Checks for:
+    1. Trailing filler phrases ("Hope this helps", "Let me know")
+    2. Follow-up topic sections
+    3. Unclosed code blocks
+    
+    Returns: (cleaned_full_text, correction_suffix)
+    - correction_suffix: empty if no fix needed, or fix tokens to send to frontend
+    """
+    original = full_text
+    result = full_text
+
+    # Strip closing filler phrases
+    for pattern in FILLER_PHRASES:
+        if "$" in pattern:  # Only closing patterns (ending with $)
+            result = re.sub(pattern, "", result, flags=re.IGNORECASE | re.MULTILINE)
+
+    # Remove follow-up topic sections at the end
+    for pattern in FOLLOWUP_PATTERNS:
+        result = re.sub(pattern, "", result, flags=re.IGNORECASE | re.DOTALL)
+
+    result = result.rstrip()
+
+    # Fix unclosed code blocks
+    code_block_count = result.count('```')
+    if code_block_count % 2 != 0:
+        result += '\n```'
+
+    # Calculate what was removed/added
+    correction = ""
+    if len(result) < len(original):
+        # Content was removed from the end — we can't "un-stream" it,
+        # but we note it in history. The user saw it briefly, that's OK.
+        pass
+    elif len(result) > len(original):
+        # Content was added (e.g., closing ```) — send as extra token
+        correction = result[len(original):]
+
+    return result, correction

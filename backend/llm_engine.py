@@ -21,7 +21,10 @@ import os
 from rag_engine import faq_retriever
 
 # Response Formatter — post-processes LLM output
-from response_formatter import classify_query, get_format_template, format_response, format_stream_response
+from response_formatter import (
+    classify_query, get_format_template, format_response, format_stream_response,
+    strip_opening_filler, cleanup_stream_ending,
+)
 
 load_dotenv()
 
@@ -154,6 +157,7 @@ class ConversationManager:
     def _build_context(self, session_id: str, user_message: str) -> tuple[str, str]:
         """
         Build RAG context and format template for the query.
+        Uses intent-based filtered retrieval and confidence scoring.
         Returns: (faq_context, format_template)
         """
         # --- Classify query intent ---
@@ -164,16 +168,45 @@ class ConversationManager:
         if intent != "casual":
             self.casual_counts[session_id] = 0
 
-        # --- RAG: Search DevOps knowledge base (skip for casual) ---
+        # --- RAG: Company-aware filtered search (skip for casual) ---
         faq_context = ""
         if intent != "casual" and faq_retriever.is_ready():
-            context = faq_retriever.search(user_message)
+            context, confidence = faq_retriever.search(user_message, intent=intent)
             if context:
+                # Confidence-aware instructions for the LLM
+                if confidence == "high":
+                    instruction = (
+                        "INSTRUCTION: Base your answer on this context. "
+                        "You have HIGH confidence data — answer directly and cite the source."
+                    )
+                elif confidence == "medium":
+                    instruction = (
+                        "INSTRUCTION: Use this context to help answer. "
+                        "Confidence is MEDIUM — answer but mention 'based on available data' if uncertain."
+                    )
+                elif confidence == "low":
+                    instruction = (
+                        "INSTRUCTION: This context has LOW relevance to the question. "
+                        "Use it only if helpful. Supplement with your own knowledge. "
+                        "If you're unsure, say 'I found some related info but may not be exact.'"
+                    )
+                else:
+                    instruction = "INSTRUCTION: Supplement with your own DevOps knowledge."
+
                 faq_context = (
-                    f"📚 KNOWLEDGE BASE CONTEXT (use this data to answer):\n\n"
+                    f"📚 KNOWLEDGE BASE CONTEXT (confidence: {confidence}):\n\n"
                     f"{context}\n\n"
-                    f"INSTRUCTION: Base your answer on this context. "
-                    f"If context doesn't fully cover the question, supplement with your knowledge but keep it brief."
+                    f"{instruction}"
+                )
+            else:
+                # No matching docs found — tell LLM to use its own knowledge
+                known_services = faq_retriever.get_known_services()
+                service_list = ", ".join(set(s.split("-")[0] for s in known_services))
+                faq_context = (
+                    f"📚 KNOWLEDGE BASE: No matching documents found for this query.\n"
+                    f"Available services in our logs: {service_list}\n"
+                    f"INSTRUCTION: Answer using your own DevOps knowledge. "
+                    f"If user asked about a specific service, mention that you don't have specific data for it."
                 )
 
         return faq_context, format_template
@@ -209,10 +242,14 @@ class ConversationManager:
         return ai_response
 
     async def chat_stream(self, session_id: str, user_message: str):
-        """Stream the AI response token-by-token (async generator).
+        """Stream the AI response with TRUE real-time token streaming.
+        
+        Hybrid approach:
+        1. Buffer first ~150 chars → strip opening filler → yield cleaned buffer
+        2. Stream remaining tokens DIRECTLY as they arrive from LLM
+        3. At end: cleanup (close code blocks, strip trailing filler)
         
         For casual messages: yields hardcoded response directly (no LLM call).
-        For technical messages: collects full LLM response, applies formatter, then yields.
         """
         intent = classify_query(user_message)
 
@@ -222,7 +259,6 @@ class ConversationManager:
             self.add_message(session_id, "human", user_message)
             self.add_message(session_id, "ai", ai_response)
 
-            # Yield word-by-word for streaming effect
             words = ai_response.split(' ')
             for i, word in enumerate(words):
                 if i < len(words) - 1:
@@ -231,38 +267,55 @@ class ConversationManager:
                     yield word
             return
 
-        # --- Technical: use LLM ---
+        # --- Technical: TRUE real-time streaming ---
         history = self.get_history(session_id)
         faq_context, format_template = self._build_context(session_id, user_message)
 
-        # Collect full response first for formatting
-        full_response = ""
+        BUFFER_SIZE = 150  # Buffer first ~150 chars for filler stripping
+        buffer = ""
+        buffer_flushed = False
+        full_response = ""  # Shadow buffer for history
 
         async for chunk in chain.astream({
             "history": history,
             "input": user_message,
             "faq_context": faq_context,
             "format_template": format_template,
-            "casual_context": "",  # Empty for technical queries
+            "casual_context": "",
         }):
             token = chunk.content
-            if token:
-                full_response += token
+            if not token:
+                continue
 
-        # Apply formatter to the complete response
-        formatted_response = format_stream_response(full_response, intent=intent)
+            full_response += token
 
-        # Yield the formatted response word-by-word for smooth display
-        words = formatted_response.split(' ')
-        for i, word in enumerate(words):
-            if i < len(words) - 1:
-                yield word + ' '
+            if not buffer_flushed:
+                # Phase 1: Buffering first ~150 chars
+                buffer += token
+                if len(buffer) >= BUFFER_SIZE:
+                    # Strip opening filler from buffer
+                    cleaned_buffer = strip_opening_filler(buffer)
+                    if cleaned_buffer:
+                        yield cleaned_buffer
+                    buffer_flushed = True
             else:
-                yield word
+                # Phase 2: Stream tokens DIRECTLY (real-time)
+                yield token
 
-        # Save to history after streaming completes
+        # Flush any remaining buffer (for short responses < 150 chars)
+        if not buffer_flushed and buffer:
+            cleaned_buffer = strip_opening_filler(buffer)
+            if cleaned_buffer:
+                yield cleaned_buffer
+
+        # Phase 3: End-of-stream cleanup
+        cleaned_text, correction = cleanup_stream_ending(full_response)
+        if correction:
+            yield correction  # e.g., closing ``` for unclosed code blocks
+
+        # Save cleaned version to history
         self.add_message(session_id, "human", user_message)
-        self.add_message(session_id, "ai", formatted_response)
+        self.add_message(session_id, "ai", cleaned_text)
 
 
 # Global instance

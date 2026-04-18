@@ -1,15 +1,20 @@
 """
-FAQ Ingestion Script
-====================
-Reads FAQ PDF → Creates vector embeddings → Stores in ChromaDB
+⚠️  DEPRECATED — DO NOT USE THIS SCRIPT
+=========================================
+This script writes to the OLD 'faq_hudco' collection.
+The chatbot now uses the 'devops_knowledge' collection.
 
-Usage:
-    cd d:\Chatabot\backend
-    venv\Scripts\activate
-    python ingest_faq.py
+Use 'python ingest_data.py' instead.
 
-Run this once. Run again only if the PDF changes.
+Running this script will NOT break anything, but the data it writes
+will NOT be used by the chatbot (different collection name).
 """
+
+import sys
+print("❌ DEPRECATED: This script is no longer used.")
+print("   Use 'python ingest_data.py' instead.")
+print("   The chatbot reads from collection 'devops_knowledge', not 'faq_hudco'.")
+sys.exit(1)
 
 import os
 import sys
