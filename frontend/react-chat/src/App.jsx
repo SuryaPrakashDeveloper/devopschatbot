@@ -196,7 +196,7 @@ function App() {
           ) : (
             <>
               {messages.map((msg, i) => (
-                <MessageBubble key={i} {...msg} />
+                msg.content === '' ? null : <MessageBubble key={i} {...msg} />
               ))}
               {isLoading && messages[messages.length - 1]?.content === '' && <TypingIndicator />}
               <div ref={messagesEndRef} />

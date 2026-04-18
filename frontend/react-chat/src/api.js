@@ -26,7 +26,13 @@ export async function sendMessage(message, sessionId) {
 }
 
 /**
- * Stream AI response token-by-token.
+ * Stream AI response token-by-token with adaptive speed.
+ * 
+ * Speed adapts based on queue size:
+ * - Queue < 5:  30ms delay (nice typewriter feel)
+ * - Queue 5-15: 15ms delay (faster catch-up)
+ * - Queue > 15: 5ms delay + batch 3 tokens (rapid rendering)
+ * 
  * Calls onToken(token) for each word/token received.
  * Calls onDone() when the stream finishes.
  * Calls onError(err) if something fails.
@@ -55,14 +61,39 @@ export async function sendMessageStream(message, sessionId, { onToken, onDone, o
 
     const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
+    // Adaptive delay based on queue size
+    const getDelay = () => {
+      const queueSize = tokenQueue.length;
+      if (queueSize > 15) return 5;   // Fast catch-up
+      if (queueSize > 5) return 15;   // Medium speed
+      return 30;                       // Nice typewriter feel
+    };
+
+    // How many tokens to process per tick
+    const getBatchSize = () => {
+      const queueSize = tokenQueue.length;
+      if (queueSize > 15) return 3;   // Batch 3 tokens when backed up
+      return 1;                        // Normal: 1 at a time
+    };
+
     const processQueue = async () => {
       if (isProcessing) return;
       isProcessing = true;
 
       while (tokenQueue.length > 0) {
-        const token = tokenQueue.shift();
-        onToken(token);
-        await delay(30); // 30ms delay between tokens for typewriter feel
+        const batchSize = getBatchSize();
+        const currentDelay = getDelay();
+
+        // Process batch
+        let batchText = '';
+        for (let i = 0; i < batchSize && tokenQueue.length > 0; i++) {
+          batchText += tokenQueue.shift();
+        }
+        if (batchText) {
+          onToken(batchText);
+        }
+
+        await delay(currentDelay);
       }
 
       isProcessing = false;

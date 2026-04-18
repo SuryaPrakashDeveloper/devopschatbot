@@ -556,6 +556,66 @@ body {
   border: 1px solid rgba(48, 54, 61, 0.5);
 }
 
+/* Code Block Wrapper — header bar + code */
+.message.ai .message-content .code-block-wrapper {
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.message.ai .message-content .code-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(22, 27, 34, 0.95);
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.message.ai .message-content .code-lang {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.message.ai .message-content .code-copy-btn {
+  background: rgba(139, 148, 158, 0.1);
+  border: 1px solid rgba(48, 54, 61, 0.6);
+  border-radius: 6px;
+  padding: 3px 10px;
+  color: var(--text-secondary);
+  font-size: 0.65rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.message.ai .message-content .code-copy-btn:hover {
+  background: rgba(14, 165, 233, 0.12);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.message.ai .message-content .code-block-wrapper pre {
+  background: rgba(13, 17, 23, 0.9);
+  border: none;
+  border-radius: 0;
+  padding: 10px 12px;
+  margin: 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.72rem;
+  color: #7ee787;
+  line-height: 1.5;
+}
+
+/* Standalone pre (without wrapper — fallback) */
 .message.ai .message-content pre {
   background: rgba(13, 17, 23, 0.8);
   border: 1px solid var(--border-color);
@@ -569,6 +629,61 @@ body {
   font-size: 0.72rem;
   color: #7ee787;
   line-height: 1.5;
+}
+
+/* Markdown Tables */
+.message.ai .message-content .md-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: 0.72rem;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.message.ai .message-content .md-table thead th {
+  background: rgba(22, 27, 34, 0.95);
+  color: #58a6ff;
+  font-weight: 600;
+  font-size: 0.7rem;
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.message.ai .message-content .md-table tbody td {
+  padding: 6px 10px;
+  border-bottom: 1px solid rgba(48, 54, 61, 0.4);
+  color: var(--text-primary);
+}
+
+.message.ai .message-content .md-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.message.ai .message-content .md-table tbody tr:hover {
+  background: rgba(14, 165, 233, 0.04);
+}
+
+/* Horizontal Rules */
+.message.ai .message-content hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 10px 0;
+}
+
+/* Links */
+.message.ai .message-content a {
+  color: #58a6ff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(88, 166, 255, 0.3);
+  transition: all 0.2s ease;
+}
+
+.message.ai .message-content a:hover {
+  color: #79c0ff;
+  border-bottom-color: #79c0ff;
 }
 
 .message.ai .message-content ul,
